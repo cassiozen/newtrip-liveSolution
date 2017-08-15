@@ -7,6 +7,9 @@ const iconURLs = {
 };
 
 const buildMarker = (type, coords) => {
+  if (!iconURLs.hasOwnProperty(type)) {
+    type = "activities";
+  }
   const markerEl = document.createElement("div");
   markerEl.style.backgroundSize = "contain";
   markerEl.style.width = "32px";
